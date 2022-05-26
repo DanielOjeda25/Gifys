@@ -1,0 +1,25 @@
+:root {
+  --gridList-column: 250px;
+  --gridList-gap: 6px;
+}
+
+.ListOfGifs {
+  grid-template-columns: repeat(auto-fit, minmax(var(--gridList-column), 1fr));
+  grid-template-rows: masonry;
+}
+
+
+
+
+
+@media screen and (min-width: 37.5rem) {
+  :root {
+    --gridList-column: 180px;
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  :root {
+    --gridList-column: 300px;
+  }
+}
