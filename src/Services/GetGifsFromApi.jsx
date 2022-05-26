@@ -14,8 +14,8 @@ const getGifsFromApi = (response) => {
   return [];
 };
 
-export default function GetGifsFromApi() {
-  const apiURL = `${API_URL}/gifs/search?${API_KEY}&q=code&limit=5&offset=0&rating=g&lang=en`;
+export default function GetGifsFromApi({limit = 25} = {}) {
+  const apiURL = `${API_URL}/gifs/search?${API_KEY}&q=vaporwave&limit=${limit}&offset=0&rating=g&lang=en`;
 
   return fetch(apiURL)
     .then((res) => res.json())
