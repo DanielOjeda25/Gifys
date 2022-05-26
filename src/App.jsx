@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { Link } from "wouter";
 import GetGifsFromApi from "./Services/GetGifsFromApi";
-import Gifs from "./Components/GifComponent/Gifs";
-import ListofGifs from "./Components/ListOfGifsComponent/ListofGifs";
+import ListofGifs from "./Components/ListOfGifsComponent";
+
 
 function App() {
   const [gifs, setGifs] = useState([]);
@@ -12,8 +11,8 @@ function App() {
     GetGifsFromApi().then((gifs) => setGifs(gifs));
   });
   return (
-    <div className="App">
-      <section className="App-header">
+    <div >
+      <section>
         <ListofGifs gifs={gifs} />
       </section>
     </div>
