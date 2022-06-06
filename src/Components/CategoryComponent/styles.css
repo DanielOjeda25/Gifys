@@ -1,0 +1,14 @@
+Link:hover{
+  color: #8c55a2;
+}
+
+@media screen and (min-width: 640px){
+  UnorderedList{
+    display: list-item;
+  }
+  unorderedList ListItem::before{
+    color:#8c55a2;
+    margin-right: 0.5em;
+    font-family: 1em;
+  }
+}
