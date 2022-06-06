@@ -4,15 +4,7 @@
   transition: all .2s; /* Animation */
 }
 
-.Gif h3 {
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  bottom: 0;
-  font-size: 12px;
-  color: #fff;
-  margin: 0;
-  position: absolute;
-  padding: 0.5em;
+.text-gifs{
   font-family: "M PLUS 1 Code", sans-serif;
 }
 
@@ -118,12 +110,3 @@
   grid-row: span 2;
 }
 
-.Gif,
-.img-gif {
-  height: 100%;
-}
-.img-gif {
-  width: 100%;
-  object-fit: contain;
-  vertical-align: top;
-}
