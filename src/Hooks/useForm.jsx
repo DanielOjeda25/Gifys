@@ -38,7 +38,7 @@ export default function useForm ({
   return {
     changeKeyword: ({ keyword }) =>
       dispatch({ type: ACTIONS.CHANGE_KEYWORD, payload: keyword }),
-    changeRation: ({ rating }) =>
+    changeRating: ({ rating }) =>
       dispatch({ type: ACTIONS.CHANGE_RATING, payload: rating }),
     keyword,
     rating
