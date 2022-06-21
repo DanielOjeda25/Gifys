@@ -1,22 +1,35 @@
-import { useEffect, useState } from "react";
-import "./App.css";
-import GetGifsFromApi from "./Services/GetGifsFromApi";
-import ListofGifs from "./Components/ListOfGifsComponent";
 
+import React, { Suspense, useEffect, useState } from 'react'
+import './App.css'
 
-function App() {
-  const [gifs, setGifs] = useState([]);
+import GetGifsFromApi from './Services/GetGifsFromApi'
+import ListofGifs from './Components/ListOfGifsComponent'
+
+import { Box, Image } from '@chakra-ui/react'
+import { Link } from 'wouter'
+
+const HomePage = React.lazy(() => import('./Pages/Home/index'))
+
+function App () {
+  const [gifs, setGifs] = useState([])
 
   useEffect(() => {
-    GetGifsFromApi().then((gifs) => setGifs(gifs));
-  });
+    GetGifsFromApi().then((gifs) => setGifs(gifs))
+  })
   return (
-    <div >
-      <section>
-        <ListofGifs gifs={gifs} />
-      </section>
-    </div>
-  );
+    <Box>
+      <Suspense>
+        <section>
+          <Link to='/'>
+            <figure>
+              <Image alt='giffys logo' src='../src/Images/react.svg'/>
+            </figure>
+          </Link>
+          <ListofGifs gifs={gifs} />
+        </section>
+      </Suspense>
+    </Box>
+  )
 }
 
-export default App;
+export default App
