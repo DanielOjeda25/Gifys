@@ -26,37 +26,4 @@ html {
   box-sizing: inherit;
 }
 
-body {
-  margin: 0;
-  font-family: "M PLUS 1 Code", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: var(--fz);
-  background-color: var(--theme-body-bg);
-  color: var(--theme-body-txt);
-}
 
-code {
-  font-family: "M PLUS 1 Code", sans-serif;
-}
-
-a {
-  color: #09f;
-  font-size: 32px;
-  text-decoration: none;
-}
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* -------------------- rf-layout  - Component / header */
-.o-header {
-  background-color: inherit;
-  position: sticky;
-  top: 0;
-  z-index: var(--zIndex-header);
-  max-height: var(--search-size-mx-h);
-}
