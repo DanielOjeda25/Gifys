@@ -10,7 +10,7 @@ export default function TrendingSearches () {
 
     getTrendingGifsServices({ signal: controller.signal })
       .then(setTrends)
-      .catch(() => {})
+      .catch(error => console.log(error))
 
     return () => controller.abort()
   }, [])
