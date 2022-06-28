@@ -12,7 +12,7 @@ export default function LazyTrending () {
   return (
     <div ref={fromRef}>
       <Suspense fallback={<Spinner color={'white'} size={'lg'} />}>
-        {isNearScreen ? < TrendingSearches /> : <Spinner color={'white'} size={'lg'} />}
+        {isNearScreen ? <TrendingSearches /> : <Spinner color={'white'} size={'lg'} />}
       </Suspense>
     </div>
   )
