@@ -13,12 +13,12 @@ import ButtonComponent from '../ButtonComponent/index'
 // ratings que tienen los gifs
 const RATINGS = ['g', 'pg', 'pg-13', 'r']
 
-export default function SearchForm (
+export default function SearchForm ({
   // inicialmente el rating seria g
   // y la palabra seria vacia
   initialKeyword = '',
   initialRating = RATINGS[0]
-) {
+}) {
   // linkeamos la re-direccion
   // eslint-disable-next-line no-unused-vars
   const [_, pushLocation] = useLocation()
@@ -57,30 +57,31 @@ export default function SearchForm (
         justifyContent={'center'}
         paddingTop={'0.5rem'}
         paddingBottom={'0.5rem'}
-        bg={'white'}
+        bg={'currentcolor'}
         margin={'0 auto 30px'}
       >
-        <ButtonComponent>Buscar</ButtonComponent>
-        <Input placeholder='Busca gifs✨'
+        <Input placeholder='Busca gifs'
           value={keyword}
           onChange={handleChange}
           type="text"
           fontSize={'16px'}
           border={'none'}
           p={'4px 16px'}
+          className='input'
         />
         <Select
-          placeholder='Select rating'
+          placeholder='Selecciona un Rating'
           value={rating}
           onChange={handleRatingChange}
+          variant='outline'
+          className='Select'
         >
-          <option disabled>
-            Ratings
-          </option>
-          {RATINGS.map((rating) => (
-            <option key={rating}>{rating}</option>
+          {RATINGS.map((rate) => (
+            <option key={rate} className='options-rating'>{rate}</option>
           ))}
         </Select>
+        <ButtonComponent>Buscar</ButtonComponent>
+
       </FormControl>
     </>
   )
