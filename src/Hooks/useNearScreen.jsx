@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react'
 
 export default function useNearScreen ({ distance = '100px', externalRef, once = true } = {}) {
   // Screar esta estado constara de que si cambia el estado
-  const [isNearScreen, setIsNearScreen] = useState(false)
+  const [isNearScreen, setShow] = useState(false)
 
   // The useRef Hook allows you to persist values between renders.
   // It can be used to store a mutable value that does not cause a re-render when updated.
@@ -17,10 +17,10 @@ export default function useNearScreen ({ distance = '100px', externalRef, once =
     const onChange = (entries, observer) => {
       const el = entries[0]
       if (el.isIntersecting) {
-        setIsNearScreen(true)
+        setShow(true)
         once && observer.disconnect()
       } else {
-        !once && setIsNearScreen(false)
+        !once && setShow(false)
       }
     }
 
@@ -30,8 +30,9 @@ export default function useNearScreen ({ distance = '100px', externalRef, once =
         : import('intersection-observer')
     ).then(() => {
       observer = new IntersectionObserver(onChange, {
-        rootMargin: `${distance}`
+        rootMargin: distance
       })
+
       if (element) observer.observe(element)
     })
     return () => observer && observer.disconnect()
