@@ -1,0 +1,7 @@
+.button-form[disabled] {
+  opacity: 0.3;
+  pointer-events: none;
+}
+.button-form:hover{
+  background-color: rgb(34, 67, 195);
+}
