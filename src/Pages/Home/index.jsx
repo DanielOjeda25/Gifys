@@ -15,7 +15,7 @@ export default function Home () {
   return (
     <>
       <Helmet>
-        <title>Home | Giffy</title>
+        <title>Inicio | Giffy</title>
       </Helmet>
       <Box
         bg={'inherit'}
@@ -27,23 +27,24 @@ export default function Home () {
         <SearchForm />
       </Box>
       <Box
-        w={'100%'}
-        maxW={'90rem'}
-        m={'0 auto'}
-        p={'0 0.5em'}
+        w='100%'
+        maxW='90rem'
+        m='0 auto'
+        p='0 0.5em'
       >
         <Box
           display={'flex'}
           flexDir={'column'}
           alignItems={'flex-start'}
+          className='Main-box'
         >
           <Box
-            flexShrink={2}
+            flexShrink='2'
             w={'100%'}
           >
             <Text
-              color={'white'}
-              marginTop={'0.6rem'}>
+              color={'White'}
+              marginTop={'0.6em'}>
               Ultima Busqueda
             </Text>
             <ListofGifs gifs={gifs} />
