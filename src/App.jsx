@@ -15,7 +15,7 @@ function App () {
     >
       <Suspense fallback={null}>
         <Box
-          bg='blackAlpha.800'
+          bg='blackAlpha.900'
           color='White'
           flexDir='column'
           fontSize='calc(10px + 2vmin)'
