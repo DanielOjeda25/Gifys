@@ -6,7 +6,9 @@ const fromApiResponseToGifs = apiResponse => {
 }
 
 export default function GetTrendingGifsServices ({ signal }) {
-  return fetch(`${API_URL}/trending/searches?api_key=${API_KEY}`, { signal })
-    .then(response => response.json())
+  const apiURL = `${API_URL}/trending/searches?${API_KEY}`
+
+  return fetch(apiURL, { signal })
+    .then(res => res.json())
     .then(fromApiResponseToGifs)
 }
