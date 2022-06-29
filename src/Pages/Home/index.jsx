@@ -18,7 +18,6 @@ export default function Home () {
         <title>Inicio | Giffy</title>
       </Helmet>
       <Box
-        bg={'inherit'}
         position={'stycky'}
         top={0}
         zIndex={20}
@@ -44,7 +43,13 @@ export default function Home () {
           >
             <Text
               color={'White'}
-              marginTop={'0.6em'}>
+              marginTop={'0.6rem'}
+              marginBottom={'0.6rem'}
+              fontSize={'1.2em'}
+              fontFamily={'Fira Sans, sans-serif'}
+              fontWeight={'500'}
+              textAlign={'center'}
+              >
               Ultima Busqueda
             </Text>
             <ListofGifs gifs={gifs} />
