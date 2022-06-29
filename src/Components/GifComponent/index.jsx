@@ -6,7 +6,6 @@ export default function Gifs ({ title, url }) {
   return (
     <Box position='relative' h='100%' className='Gif'>
       <Text
-        className='text-gifs'
         borderRadius='5px'
         fontSize='xs'
         margin={0}
@@ -14,7 +13,8 @@ export default function Gifs ({ title, url }) {
         p='.5em'
         color='white'
         bottom='0'
-        bg='rgba(0, 0, 0, 0.1)'>
+        bg='rgba(0, 0, 0, 0.1)'
+        className='text-gifs'>
         {title}
       </Text>
       <Image
