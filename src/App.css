@@ -7,8 +7,8 @@
   --search-size-mx-h: 3rem;
   --zIndex-header: 20;
   --zIndex-component: 5;
-  --brand-color_1: rgb(2, 0, 36);
-  --brand-color_2: rgb(7, 4, 105);
+  --brand-color_1: rgb(46, 40, 165);
+  --brand-color_2: rgb(15, 8, 206);
   --brand-color_3: rgb(131, 58, 180);
   --brand-color_4: rgb(238, 174, 202);
   --brand-color_5: rgb(12, 231, 217);
@@ -17,4 +17,10 @@
 
 button {
   font-size: calc(10px + 2vmin);
+}
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }

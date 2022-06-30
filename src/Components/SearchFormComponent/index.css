@@ -8,3 +8,11 @@
   --bg-colors-variant-3: #494a47;
   --bg-colors-variant-4: #2c2c2c;
 }
+.input-icon {
+  transition: transform 0.2s;
+}
+.input-icon:hover {
+  transform: scale(1.5);
+}
+
+

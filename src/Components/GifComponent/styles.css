@@ -23,7 +23,7 @@
   background: var(--brand-color_1);
   background: linear-gradient(
     90deg,
-    rgba(2, 0, 36, 1) 0%,
+    rgb(12, 154, 236) 0%,
     rgba(175, 8, 121, 1) 0%,
     rgba(0, 212, 255, 1) 85%
   );
@@ -32,7 +32,7 @@
   background: var(--brand-color_2);
   background: linear-gradient(
     90deg,
-    rgba(2, 0, 36, 1) 0%,
+    rgb(12, 154, 236) 0%,
     rgba(227, 237, 12, 1) 0%,
     rgba(0, 255, 0, 1) 85%
   );
