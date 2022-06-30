@@ -27,7 +27,8 @@ export default function Category ({ name, options = [] }) {
           <ListItem key={singleOption} index={index} type="primary"
             padding={'0.3rem'}
             margin={'0.2rem'}
-            fontSize={'1.2rem'}
+            h='2.2rem'
+            fontSize={'.5em'}
             borderRadius={'0.3rem'}
             className='ListItem color-change-2x'
           >
