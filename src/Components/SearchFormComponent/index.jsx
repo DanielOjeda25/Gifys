@@ -4,11 +4,12 @@ import { useLocation } from 'wouter'
 import {
   FormControl,
   Input,
-  Select
+  InputGroup,
+  InputRightElement
 } from '@chakra-ui/react'
 
 import useForm from '../../Hooks/useForm'
-import ButtonComponent from '../ButtonComponent/index'
+import { SearchIcon } from '@chakra-ui/icons'
 
 // ratings que tienen los gifs
 const RATINGS = ['g', 'pg', 'pg-13', 'r']
@@ -24,7 +25,7 @@ export default function SearchForm ({
   const [_, pushLocation] = useLocation()
 
   // usamos nuestro hook
-  const { keyword, rating, changeKeyword, changeRating } = useForm({
+  const { keyword, rating, changeKeyword } = useForm({
     initialKeyword,
     initialRating
   })
@@ -46,42 +47,31 @@ export default function SearchForm ({
     event.preventDefault()
     onSubmit({ keyword })
   }
-  // esta funcion controla el cambio dedl rating
-  const handleRatingChange = (event) => {
-    changeRating({ rating: event.target.value })
-  }
   return (
+    // Hacer OTRO SEARCH FORM
     <>
       <FormControl onSubmit={handleSubmit}
         display={'flex'}
         justifyContent={'center'}
         paddingTop={'0.5rem'}
         paddingBottom={'0.5rem'}
-        bg={'currentcolor'}
         margin={'0 auto 30px'}
+        w={'70vw'}
+        className={'form-control'}
       >
-        <Input placeholder='Busca gifs'
-          value={keyword}
-          onChange={handleChange}
-          type="text"
-          fontSize={'16px'}
-          border={'none'}
-          p={'4px 16px'}
-          className='input'
-        />
-        <Select
-          placeholder='Selecciona un Rating'
-          value={rating}
-          onChange={handleRatingChange}
-          variant='outline'
-          className='Select'
-        >
-          {RATINGS.map((rate) => (
-            <option key={rate} className='options-rating'>{rate}</option>
-          ))}
-        </Select>
-        <ButtonComponent>Buscar</ButtonComponent>
-
+        <InputGroup>
+          <InputRightElement
+            className='input-icon'
+            // eslint-disable-next-line react/no-children-prop
+            children={<SearchIcon color={'whiteAlpha.900'}/>}
+          />
+          <Input
+            type='text' placeholder='Search your favourite gifs'
+            value={keyword}
+            onChange={handleChange}
+            variant='flushed'
+          />
+        </InputGroup>
       </FormControl>
     </>
   )
