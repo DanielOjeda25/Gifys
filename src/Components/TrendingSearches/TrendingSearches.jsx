@@ -15,5 +15,5 @@ export default function TrendingSearches () {
     return () => controller.abort()
   }, [])
 
-  return <Category name='Tendencias' options={trends}/>
+  return <Category name='Trends' options={trends}/>
 }
