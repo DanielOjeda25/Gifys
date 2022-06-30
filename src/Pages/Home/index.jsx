@@ -50,7 +50,7 @@ export default function Home () {
               fontWeight={'500'}
               textAlign={'center'}
               >
-              Ultima Busqueda
+             Last Search
             </Text>
             <ListofGifs gifs={gifs} />
           </Box>
