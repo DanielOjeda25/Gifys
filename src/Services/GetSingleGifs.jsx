@@ -1,16 +1,10 @@
 import { API_KEY, API_URL } from './settings'
 
 const fromApiResponseToGifs = (response) => {
-  const { data = [] } = response
-  if (Array.isArray(data)) {
-    // we get the gifs from the api
-    return data.map((image) => {
-      const { images, title, id } = image
-      const { url } = images.downsized
-      return { title, id, url }
-    })
-  }
-  return []
+  const { data } = response
+  const { images, title, id } = data
+  const { url } = images.downsized
+  return { title, id, url }
 }
 
 export default function getSingleGifs ({ id }) {
