@@ -3,11 +3,12 @@ import React from 'react'
 import './styles.css'
 
 export default function Gifs ({ title, url }) {
+  // arreglar las letras, escalable y cambiar el grid
   return (
     <Box position='relative' h='100%' className='Gif'>
       <Text
         borderRadius='5px'
-        fontSize='xs'
+        fontSize='.45em'
         margin={0}
         position='absolute'
         p='.5em'
