@@ -2,6 +2,8 @@ import React, { Suspense } from 'react'
 import './App.css'
 
 import { GifsContext } from './Context/GifsContext'
+import Detail from './Pages/DetailGifs/index'
+import SearchResults from './Pages/SearchResults/index'
 
 import { Box, Image } from '@chakra-ui/react'
 import { Link, Route, Switch } from 'wouter'
@@ -37,6 +39,8 @@ function App () {
           <GifsContext>
             <Switch>
               <Route component={HomePage} path='/' />
+              <Route component={SearchResults} path='/search/:keyword' />
+              <Route component={Detail} path='/gif/:id' />
             </Switch>
           </GifsContext>
         </Box>
