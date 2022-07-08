@@ -1,8 +1,9 @@
 import React from 'react'
 
 import { Redirect } from 'wouter'
-import { Spinner } from '@chakra-ui/react'
+import { Spinner, Text } from '@chakra-ui/react'
 import { Helmet } from 'react-helmet'
+
 import Gifs from '../../Components/GifComponent/index'
 import useSingleGifs from '../../Hooks/useSingleGifs'
 
@@ -33,8 +34,8 @@ export default function Detail ({ params }) {
   return <>
     <Helmet>
       <title>{title} || Giffy</title>
-      <h3>{gif.title}</h3>
     </Helmet>
+    <Text>{gif.title}</Text>
     <Gifs gif={gif} />
   </>
 }
