@@ -1,9 +1,7 @@
 // hook personalizado para trabajar con los gifs
-
 import { useContext, useState, useEffect } from 'react'
 
 import getGifs from '../Services/GetGifsFromApi'
-
 import GifsContext from '../Context/GifsContext'
 
 // variable global
@@ -20,13 +18,13 @@ export function useGifs ({ keyword, rating } = { keyword: null }) {
   const { gifs, setGifs } = useContext(GifsContext)
 
   // guardamos el keyword ingresado en el localstore
-  const keywordToUse = keyword || localStorage.getItem('keyword') || 'react'
+  const keywordToUse = keyword || localStorage.getItem('lastKeyword') || 'music'
 
   useEffect(() => {
     setIsLoading(true)
 
-    getGifs({ keyword: keywordToUse, rating }).then((gifs) => {
-      setGifs(gifs)
+    getGifs({ keyword: keywordToUse, rating }).then(Gifs => {
+      setGifs(Gifs)
       setIsLoading(false)
 
       localStorage.setItem('lastKeyword', keyword)
@@ -38,8 +36,8 @@ export function useGifs ({ keyword, rating } = { keyword: null }) {
 
     setLoandingNextPage(true)
 
-    getGifs({ keyword: keywordToUse, rating, page }).then((gifs) => {
-      setGifs((prevGifs) => prevGifs.concat(gifs))
+    getGifs({ keyword: keywordToUse, page, rating }).then(nextGifs => {
+      setGifs((prevGifs) => prevGifs.concat(nextGifs))
       setLoandingNextPage(false)
     })
   }, [keywordToUse, page, rating, setGifs])
