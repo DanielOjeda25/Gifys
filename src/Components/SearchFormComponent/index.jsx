@@ -2,14 +2,14 @@ import React from 'react'
 import './index.css'
 import { useLocation } from 'wouter'
 import {
+  Button,
   FormControl,
-  Input,
-  InputGroup,
-  InputRightElement
+  Input
 } from '@chakra-ui/react'
 
 import useForm from '../../Hooks/useForm'
-import { SearchIcon } from '@chakra-ui/icons'
+import { Search2Icon } from '@chakra-ui/icons'
+import { Form, Formik } from 'formik'
 
 // ratings que tienen los gifs
 const RATINGS = ['g', 'pg', 'pg-13', 'r']
@@ -25,7 +25,7 @@ export default function SearchForm ({
   const [_, pushLocation] = useLocation()
 
   // usamos nuestro hook
-  const { keyword, rating, changeKeyword } = useForm({
+  const { keyword, changeKeyword } = useForm({
     initialKeyword,
     initialRating
   })
@@ -35,7 +35,7 @@ export default function SearchForm ({
     // si el keyword no es vacio
     if (keyword !== '') {
       // redireccionamos
-      pushLocation(`/search/${keyword}/${rating}`)
+      pushLocation(`/search/${keyword}`)
     }
   }
   // creamos una funcion para hacer el cambio
@@ -48,31 +48,30 @@ export default function SearchForm ({
     onSubmit({ keyword })
   }
   return (
-    // Hacer OTRO SEARCH FORM
     <>
-      <FormControl onSubmit={handleSubmit}
-        display={'flex'}
-        justifyContent={'center'}
-        paddingTop={'0.5rem'}
-        paddingBottom={'0.5rem'}
-        margin={'0 auto 30px'}
-        w={'70vw'}
-        className={'form-control'}
-      >
-        <InputGroup>
-          <InputRightElement
-            className='input-icon'
-            // eslint-disable-next-line react/no-children-prop
-            children={<SearchIcon color={'whiteAlpha.900'}/>}
-          />
-          <Input
-            type='text' placeholder='Search your favourite gifs'
-            value={keyword}
-            onChange={handleChange}
-            variant='flushed'
-          />
-        </InputGroup>
-      </FormControl>
+      <Formik >
+        <Form initialValues={{ name: '' }}
+          onSubmit={handleSubmit}
+        >
+          <FormControl
+            display={'flex'}
+            justifyContent={'center'}
+            paddingTop={'0.5rem'}
+            paddingBottom={'0.5rem'}
+            margin={'0 auto 30px'}
+            w={'70vw'}
+            className={'form-control'}>
+            <Input placeholder='Search your favourite gifs' value={keyword}
+              onChange={handleChange} variant='flushed' autoComplete='off' />
+            <Button
+              ml={'1rem'}
+              type='submit'
+              colorScheme='teal'
+              variant='outline'
+            ><Search2Icon mr={'.2rem'} h={4} w={4} />Search</Button>
+          </FormControl>
+        </Form>
+      </Formik>
     </>
   )
 }
