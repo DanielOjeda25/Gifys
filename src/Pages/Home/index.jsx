@@ -50,7 +50,7 @@ export default function Home () {
               fontWeight={'500'}
               textAlign={'center'}
               >
-             Last Search
+             Random Giffys
             </Text>
             <ListofGifs gifs={gifs} />
           </Box>
