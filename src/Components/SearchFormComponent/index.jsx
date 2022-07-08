@@ -50,7 +50,7 @@ export default function SearchForm ({
   return (
     <>
       <Formik >
-        <Form initialValues={{ name: '' }}
+        <Form
           onSubmit={handleSubmit}
         >
           <FormControl
