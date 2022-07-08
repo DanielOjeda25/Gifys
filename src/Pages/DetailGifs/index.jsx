@@ -1,14 +1,14 @@
 import React from 'react'
 import { Link, Redirect } from 'wouter'
-import { Box, Button, Center, Divider, Spinner, Text } from '@chakra-ui/react'
+import { Button, Center, Divider, Spinner, Text } from '@chakra-ui/react'
 import { Helmet } from 'react-helmet'
 
 import Gifs from '../../Components/GifComponent/index'
 import useSingleGifs from '../../Hooks/useSingleGifs'
-import TrendingSearches from '../../Components/TrendingSearches/TrendingSearches'
+
 import { ArrowBackIcon } from '@chakra-ui/icons'
 
-export default function Detail({ params }) {
+export default function Detail ({ params }) {
   const { singleGif, isLoading, error } = useSingleGifs({ id: params.id })
 
   // tengamos en cuenta si el gif tiene un titulo

@@ -12,31 +12,32 @@ export default function Category ({ name, options = [] }) {
         textAlign={'center'}
         marginBottom={'0.7rem'}
         marginTop={'0.6rem'}
-        className='Title'
-      >{name}</Text>
+        className='Title'>
+        {name}
+      </Text>
       <UnorderedList
         listStylePosition={'inside'}
         display={'flex'}
         flexWrap={'wrap'}
         padding={'0'}
         margin={'0'}
-        justifyContent={'space-around'}
-        className='List'
-      >
+        justifyContent={'flex-end'}
+        className='List'>
         {options.map((singleOption, index) => (
-          <ListItem key={singleOption} index={index} type="primary"
-            padding={'0.3rem'}
-            margin={'0.2rem'}
-            h='2.2rem'
-            fontSize={'.5em'}
-            borderRadius={'0.3rem'}
-            className='ListItem color-change-2x'
-          >
-            <Link to={`/search/${singleOption}`}
-              className='Link'
-            >
-              {singleOption}
-            </Link>
+          <ListItem
+            key={singleOption}
+            index={index}
+            type='primary'
+            className='ListItem'>
+            <Box
+              padding={'0.3rem'}
+              margin={'0.2rem'}
+              maxH='2.2rem'
+              fontSize={'1em'}>
+              <Link to={`/search/${singleOption}`} className='Link'>
+                {singleOption}
+              </Link>
+            </Box>
           </ListItem>
         ))}
       </UnorderedList>
