@@ -1,15 +1,15 @@
+import { useEffect, useState } from 'react'
 import { useGifs } from './useGifs'
 import getSingleGifs from '../Services/GetSingleGifs'
-import { useEffect, useState } from 'react'
 
 export default function useSingleGifs ({ id }) {
   const { gifs } = useGifs()
 
   // traemos las gifs desde el useGifs
-  const gifsFromCache = gifs.find((gif) => gif.id === id)
+  const gifsFromCache = gifs.find(singleGifs => singleGifs.id === id)
 
   // y creamos un estado para guardar esos gifs
-  const [gif, setGif] = useState(gifsFromCache)
+  const [singleGif, setGif] = useState(gifsFromCache)
   const [isLoading, setIsLoading] = useState(false)
 
   // creamos un estado que controle si ocurre un error
@@ -17,7 +17,7 @@ export default function useSingleGifs ({ id }) {
 
   useEffect(() => {
     // si el gif no esta
-    if (!gif) {
+    if (!singleGif) {
       setIsLoading(true)
 
       // llamar al servicio si no tenemos el gif
@@ -33,6 +33,6 @@ export default function useSingleGifs ({ id }) {
           setIsLoading(false)
         })
     }
-  }, [gif, id])
-  return { gif, isLoading, error }
+  }, [singleGif, id])
+  return { singleGif, isLoading, error }
 }
