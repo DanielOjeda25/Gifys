@@ -4,9 +4,11 @@ import './App.css'
 import { GifsContext } from './Context/GifsContext'
 import Detail from './Pages/DetailGifs/index'
 import SearchResults from './Pages/SearchResults/index'
+import ErrorPage from './Pages/Error'
 
-import { Box, Image } from '@chakra-ui/react'
+import { Box, Heading } from '@chakra-ui/react'
 import { Link, Route, Switch } from 'wouter'
+
 
 const HomePage = React.lazy(() => import('./Pages/Home/index'))
 
@@ -24,12 +26,12 @@ function App () {
           textAlign='left'>
           <Link to='/'>
             <Box m='10px auto' p='20px 0' w='144px'>
-              <Image
-                alt='giffys logo'
-                src='../src/Images/react.svg'
-                maxW='100%'
-                objectFit='cover'
-              />
+              <Heading
+                fontFamily={'Fira Sans, sans-serif'}
+                spacing='0.5em'
+                as='h2' size='3xl'
+                cursor={'pointer'}
+              >Giffy</Heading>
             </Box>
           </Link>
           <GifsContext>
@@ -37,7 +39,7 @@ function App () {
               <Route component={HomePage} path='/' />
               <Route component={SearchResults} path='/search/:keyword' />
               <Route component={Detail} path='/gif/:id' />
-              {/* !Hacer la pagina de error y arreglar minorias */}
+              <Route component={ErrorPage} path="/:rest*" />
             </Switch>
           </GifsContext>
         </Box>
