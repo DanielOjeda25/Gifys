@@ -1,4 +1,5 @@
 {
+  "homepage": "https://DanielOjeda25.github.io/Gifys",
   "name": "gifys-app",
   "private": true,
   "version": "0.0.0",
@@ -6,7 +7,9 @@
     "lint": "eslint .",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.2",
