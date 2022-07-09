@@ -1,7 +1,7 @@
 # Gifys
 
 This small project aims only to show gifs that are searched, obtaining them through an API
-- [Link]([danielojeda25.github.io/gifys/](https://danielojeda25.github.io/Gifys/))
+- [Link](https://danielojeda25.github.io/Gifys/)
 ## Technologies I have used
 
  - [Vite js: To create and Run project more fast](https://vitejs.dev/)
