@@ -9,7 +9,6 @@ import ErrorPage from './Pages/Error'
 import { Box, Heading } from '@chakra-ui/react'
 import { Link, Route, Switch } from 'wouter'
 
-
 const HomePage = React.lazy(() => import('./Pages/Home/index'))
 
 function App () {
