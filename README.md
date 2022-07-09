@@ -1,4 +1,4 @@
-# Gifys
+# Gifys(danielojeda25.github.io/gifys/)
 
 This small project aims only to show gifs that are searched, obtaining them through an API
 
